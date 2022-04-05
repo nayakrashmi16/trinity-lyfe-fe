@@ -1,0 +1,27 @@
+@import '../../styles.scss';
+
+.error-toast-container {
+    @extend .body2-text;
+    color: $on-error;
+
+    background-color: $error-transparent;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+
+    padding: 0.5em 1.5em;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-toast-icon {
+    height: 25px;
+    margin-right: 10px;
+}

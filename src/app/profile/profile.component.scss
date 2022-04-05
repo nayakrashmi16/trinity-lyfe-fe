@@ -1,0 +1,48 @@
+@import '../../styles.scss';
+
+
+.profile-detail-container { 
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+}
+
+.profile-img-container { 
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    background-color: $primary-dark;
+    margin-right: 40px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    height: 120px;
+}
+
+.profile-username {
+    @extend .h1-text;
+    margin-bottom: 20px;
+} 
+
+.profile-name {
+    @extend .h2-text;
+    color: $border;
+    margin-bottom: 25px;
+}
+
+.profile-post-count {
+    @extend .body1-text;
+}
+
+.change-password-btn {
+    @extend .primary-btn-filled;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    margin-left: 50px;
+}

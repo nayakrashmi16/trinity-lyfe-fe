@@ -1,0 +1,96 @@
+@import '../../styles.scss';
+
+.posts-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+.post-container {
+    height: 250px;
+    width: 300px;
+    border-radius: 15px;
+    margin: 30px;
+
+    background-color: $surface;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    box-shadow: 0 16px 40px 0 $card-shadow;
+}
+
+.post-overlay {
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 1.5em;
+
+    background-color: rgba(0,0,0,0);
+
+    transition: all 0.2s ease;
+}
+
+.post-likes-count,
+.post-comments-count {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $on-primary-dark;
+}
+
+.post-likes-icon,
+.post-comments-icon {
+    height: 30px;
+    margin-right: 5px;
+}
+
+.post-container:hover .post-comments-count,
+.post-container:hover .post-likes-count {
+    visibility: visible;
+}
+
+.post-container:hover .post-overlay {
+    background-color: rgba(0,0,0,0.7);
+}
+
+
+.post-img {
+    height: 100%;
+}
+
+.no-posts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    padding: 40px;
+}
+
+.no-posts-text {
+    @extend .body2-text;
+    color: $on-background;
+}
+
+.no-posts-img {
+    height: 500px;
+}

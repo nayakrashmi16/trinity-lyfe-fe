@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<app-error-toast [error]="error"></app-error-toast>
+<div class="banner-container">
+    <div class="banner-content"> 
+         <p class="banner-title">TrinityLyfe</p>
+         <h1 class="banner-headline">Trinity’s very own social media platform</h1>
+         <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+            <input type="text" placeholder="Search for your favourite society, cohort or friend" class="form-input" formControlName="searchValue">
+         </form>
+    </div>
+</div>
+
+<app-post-grid [postDetailArray]="postDetailArray"></app-post-grid>

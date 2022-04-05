@@ -1,0 +1,66 @@
+<div class="page-container">
+    <div class="illustration-container">
+        <img src="../../assets/images/signup-illustration.png" class="illustration-img">
+    </div>
+    <div class="form-container">
+        <app-error-toast [error]="signupError"></app-error-toast>
+        <h1 class="form-header">Signup</h1>
+        <h3 class="form-subheader">Create an account with Trinity Lyfe</h3>
+        <form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-input-container">
+                <label for="name" class="form-input-label">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" class="form-input" formControlName="name"
+                    required>
+                <p class="form-input-error"
+                    *ngIf="name.invalid && (name.dirty || name.touched && name.errors?.required)">Name is a required
+                    field</p>
+            </div>
+            <div class="form-input-container">
+                <label for="username" class="form-input-label">Username</label>
+                <input type="text" id="username" placeholder="Enter a username" class="form-input"
+                    formControlName="username" required>
+                <p class="form-input-error"
+                    *ngIf="username.invalid && (username.dirty || username.touched) && username.errors?.required">Username is a
+                    required field</p>
+            </div>
+            <div class="form-input-container">
+                <label for="email" class="form-input-label">Email ID</label>
+                <input type="email" id="email" placeholder="Enter your email id" class="form-input"
+                    formControlName="email" email="true" required>
+                <p class="form-input-error"
+                    *ngIf="email.invalid && (email.dirty || email.touched) && email.errors?.required">Email is a
+                    required field</p>
+                <p class="form-input-error"
+                    *ngIf="email.invalid && (email.dirty || email.touched) && email.errors?.email">Email is not valid</p>
+            </div>
+            <div class="form-input-container">
+                <label for="password" class="form-input-label">Password</label>
+                <input type="password" id="password" placeholder="Enter a password" class="form-input"
+                    formControlName="password" minlength="5" required>
+                <p class="form-input-error"
+                    *ngIf="password.invalid && (password.dirty || password.touched) && password.errors?.required">Password is a required
+                    field</p>
+                <p class="form-input-error"
+                    *ngIf="password.invalid && (password.dirty || password.touched) && password.errors?.minlength">Password must be atleast 5 characters long</p>
+            </div>
+            <div class="form-input-container">
+                <label for="password" class="form-input-label">Confirm Password</label>
+                <input type="password" id="password-confirmation" placeholder="Confirm your password" class="form-input"
+                    formControlName="confirmPassword" minlength="5" required>
+                <p class="form-input-error"
+                    *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors?.required">Confirm Password is a required
+                    field</p>
+                <p class="form-input-error"
+                    *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors?.notSame">Passwords don't match</p>
+                <p class="form-input-error"
+                    *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors?.minlength">Password must be atleast 5 characters long</p>
+            </div>
+            <div class="form-input-container">
+                <button class="form-submit-btn" type="submit" [disabled]="!signupForm.valid">Signup</button>
+            </div>
+        </form>
+        <div class="alternate-link-container">
+            <p class="alternate-link-text">Already Signed Up? <a routerLink="/login" routerLinkActive="active" class="alternate-link">Login</a> now</p>
+        </div>
+    </div>
+</div>

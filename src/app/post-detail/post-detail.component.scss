@@ -1,0 +1,232 @@
+@import '../../styles.scss'; 
+
+.post-detail-container {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.post-img-container {
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 40px;
+    box-shadow: 0 16px 40px 0 $card-shadow;
+}
+
+.post-img {
+    height: 100%;
+}
+
+.post-detail-content-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 500px;
+    overflow: hidden;
+    justify-content: space-between;
+    // background-color: antiquewhite;
+}
+
+.post-info-container {
+    display: flex;
+    flex-direction: column;
+    height: 55%;
+    overflow: scroll;
+    //margin-bottom: 30px;
+}
+
+.post-username-container {
+    display: flex;
+    align-items: center;
+    height: 10%;
+    //margin-bottom: 30px;
+}
+
+.post-date {
+    @extend .body2-text;
+    color: $border;
+    margin-bottom: 10px;
+}
+
+.profile-img-container {
+    height: 45px;
+    width: 45px;
+    background-color: $primary-dark;
+    border-radius: 100%;
+    margin-right: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    height: 35px;
+}
+
+.post-username {
+    @extend .h2-text;
+    color: $on-background;
+}
+
+.post-caption-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.post-caption-username {
+    @extend .body2-text;
+    color: $on-background;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.post-caption {
+    @extend .body2-text;
+    white-space: pre-line;
+    color: $on-background;
+}
+
+.post-likes-container,
+.post-comments-container {
+    display: flex;
+}
+
+.post-likes-container {
+    padding-right: 10px;
+    border-right: 1px solid $border;
+}
+
+.post-comments-container {
+    padding-left: 10px;
+    border-left: 1px solid $border;
+}
+
+.post-comment-list-item {
+    @extend .body2-text;
+    color: $on-background;
+}
+
+.post-comment-username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.post-comment-list-item:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+.post-like-count,
+.post-comment-count {
+    @extend .body1-text;
+    color: $on-background;
+    margin-right: 5px;
+}
+
+.post-like-text,
+.post-comment-text {
+    @extend .body1-text;
+    color: $on-background;
+}
+
+.post-like-icon {
+    height: 30px;
+}
+
+.post-actions-container { 
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 32%;
+}
+
+.post-actions-btns-container {
+    position: relative;
+}
+
+
+.post-comment-box-container {
+    margin-top: 15px;
+}
+
+.form-input-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-input-container:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.form-input-label {
+    @extend .body2-text;
+    color: $primary-dark;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.form-input {
+    @extend .body3-text;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid;    
+    
+    color: $on-background;
+    border-color: $border;
+
+    transition: all 0.2s ease-in;
+
+    width: 70%;
+    
+}
+
+.comment-submit-btn {
+    width: 20%;
+    margin-left: 5px;
+    @extend .primary-btn-filled;
+    border-radius: 10px;
+ }
+
+.form-input::placeholder {
+    color: $placeholder;
+}
+
+.form-input:focus {
+    border-color: $primary-light;
+}
+
+.post-actions-overlay { 
+    @extend .body2-text;
+    color: $on-primary-dark;
+   
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.login-link,
+.signup-link {
+    @extend .body1-text;
+    color: $on-primary-dark;
+    margin: 0 5px;
+}
+
+.post-statistics-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}

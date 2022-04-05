@@ -1,0 +1,36 @@
+<div class="page-container">
+    <div class="illustration-container">
+        <img src="../../assets/images/login-illustration.png" class="illustration-img">
+    </div>
+    <div class="form-container">
+        <app-error-toast [error]="loginError"></app-error-toast>
+        <h1 class="form-header">Login</h1>
+        <h3 class="form-subheader">Log in to your Trinity Lyfe account </h3>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-input-container">
+                <label for="username" class="form-input-label">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" class="form-input"
+                    formControlName="username" required>
+                <p class="form-input-error"
+                    *ngIf="(username.dirty || username.touched) && username.errors?.required">Username is a
+                    required field</p>
+            </div>
+            <div class="form-input-container">
+                <label for="password" class="form-input-label">Password</label>
+                <input type="password" id="password" placeholder="Enter a password" class="form-input"
+                    formControlName="password" required>
+                <p class="form-input-error"
+                    *ngIf="password.invalid && (password.dirty || password.touched) && password.errors?.required">
+                    Password is a required
+                    field</p>
+            </div>
+            <div class="form-input-container">
+                <button class="form-submit-btn" type="submit" [disabled]="!loginForm.valid">Login</button>
+               
+            </div>
+        </form>
+        <div class="alternate-link-container">
+            <p class="alternate-link-text">Don’t have an account? <a routerLink="/signup" routerLinkActive="active" class="alternate-link">Signup</a>  now</p>
+        </div>
+    </div>
+</div>

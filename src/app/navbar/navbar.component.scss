@@ -1,0 +1,102 @@
+@import '../../styles.scss';
+
+.navbar-container {
+    display: flex;
+    background-color: $background;
+
+    padding: 18px 24px;
+
+    justify-content: space-between;
+}
+
+.navbar-left-container,
+.navbar-right-container {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.logo-img {
+    height: 30px;
+    margin-right: 5px;
+}
+
+.logo-text {
+    @extend .body1-text;
+    color: $on-background;
+}
+
+.upload-photo-btn {
+    @extend .primary-btn-filled;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-right: 35px;
+}
+
+.upload-photo-btn:hover {
+    @extend .primary-btn-filled--hover;
+}
+
+.upload-photo-btn:active {
+    @extend .primary-btn-filled--active;
+}
+
+.upload-photo-btn-icon {
+    height: 15px;
+    margin-right: 8px;
+}
+
+.profile-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 10px;
+}
+
+.profile-link-text {
+    @extend .body2-text;
+    color: $on-background;
+    cursor: pointer;
+}
+
+.profile-img-container {
+    height: 45px;
+    width: 45px;
+    background-color: $primary-dark;
+    border-radius: 100%;
+    margin-right: 10px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    height: 35px;
+}
+
+.link-container {
+    @extend .button-text;
+    color: $on-background;
+    cursor: pointer;
+}
+
+.link-container:not(:last-child) {
+    margin-right: 35px;
+}
+
+.logout-btn {
+    @extend .primary-btn-outline;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+}

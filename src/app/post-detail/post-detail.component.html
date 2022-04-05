@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<app-error-toast [error]="error"></app-error-toast>
+<div class="post-detail-container" *ngIf="postDetail">
+    <div class="post-img-container">
+        <img [src]="postDetail.src" class="post-img" *ngIf="postDetail.src">
+    </div>
+    <div class="post-detail-content-container">
+        <div class="post-username-container">
+            <div class="profile-img-container">
+                <img src="../../assets/images/avatar.png" class="profile-img">
+            </div>
+            <a class="post-username" [routerLink]="['/profile', postDetail.username]" routerLinkActive="active">{{postDetail.username}}</a>
+        </div>
+        <div class="post-info-container">
+            <p class="post-date">posted on {{postDetail.date}}</p>
+            <div class="post-caption-container">
+                <pre
+                    class="post-caption"><span class="post-caption-username">{{postDetail.username}}</span>{{postDetail.caption}}</pre>
+            </div>
+            <div class="post-comments-list-container">
+                <p class="post-comment-list-item" *ngFor="let commentItem of postDetail.comments">
+                    <a class="post-comment-username" [routerLink]="['/profile', commentItem.username]" routerLinkActive="active" >{{commentItem.username}}</a>
+                    <span class="post-comment">{{commentItem.comment}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="post-actions-container">
+            <div class="post-statistics-container">
+                <div class="post-likes-container">
+                    <span class="post-like-count">{{postDetail.likesCount}}</span>
+                    <span class="post-like-text" *ngIf="postDetail.likesCount == 1">like</span>
+                    <span class="post-like-text" *ngIf="postDetail.likesCount != 1">likes</span>
+                </div>
+                <div class="post-comments-container">
+                    <span class="post-comment-count">{{postDetail.commentsCount}}</span>
+                    <span class="post-comment-text" *ngIf="postDetail.commentsCount == 1">comment</span>
+                    <span class="post-comment-text" *ngIf="postDetail.commentsCount != 1">comments</span>
+                </div>    
+            </div>
+            <div class="post-actions-btns-container">
+                <div class="post-actions-overlay" *ngIf="isLoggedIn === 'false'">
+                    <a routerLink="/signup" routerLinkActive="active" class="signup-link">Signup</a> or <a
+                        routerLink="/login" routerLinkActive="active" class="login-link">Login</a> to start interacting
+                    with your favourite posts!
+                </div>
+                <div class="post-like-action-container">
+                    <img src="../../assets/icons/heart-outline.png" *ngIf="!postDetail.likedByCurrentUser"
+                        (click)="toggleLike()" class="post-like-icon" [ngClass]="{'disabled': isLoggedIn === 'false'}">
+                    <img src="../../assets/icons/heart-filled.png" *ngIf="postDetail.likedByCurrentUser"
+                        (click)="toggleLike()" class="post-like-icon" [ngClass]="{'disabled': isLoggedIn === 'false'}">
+                </div>
+                <div class="post-comment-box-container">
+                    <form [formGroup]="commentForm" class="post-comment-form" (ngSubmit)="postComment()"
+                        [ngClass]="{'disabled': isLoggedIn === 'false'}">
+                        <div class="form-input-container">
+                            <label for="username" class="form-input-label">Write a comment</label>
+                            <input type="text" id="comment" placeholder="Enter a comment" class="form-input"
+                                formControlName="comment">
+                             <button type="submit" class="comment-submit-btn">Post</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

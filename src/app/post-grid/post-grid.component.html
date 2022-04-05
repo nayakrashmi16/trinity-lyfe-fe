@@ -1,0 +1,19 @@
+<div class="posts-container" *ngIf="postDetailArray">
+    <div class="post-container" *ngFor="let post of postDetailArray" [routerLink]="['/post', post.post_id]">
+        <div class="post-overlay">    
+            <div class="post-likes-count">
+                <img src="../../assets/icons/heart-outline-white.png" class="post-likes-icon">
+                <span>{{post.likesCount}}</span>
+            </div>
+            <div class="post-comments-count">
+                <img src="../../assets/icons/comment-outline-white.png" class="post-comments-icon">
+                <span>{{post.commentsCount}}</span>
+            </div>
+        </div>
+        <img [src]="post.src" class="post-img">
+    </div>
+    <div class="no-posts-container" *ngIf="postDetailArray.length === 0">
+        <h2 class="no-posts-text">No posts yet! Start posting now!</h2>
+        <img src="../../assets/images/no-images.png" class="no-posts-img">
+    </div>
+</div>

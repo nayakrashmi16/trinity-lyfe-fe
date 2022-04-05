@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import './resets.scss';
+@import './colors';
+@import './fonts';
+
+.primary-btn-filled {
+    background-color: $primary;
+    color: $on-primary;
+    box-shadow: 0 4px 4px 2px $primary-shadow;
+    
+    @extend .button-text;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+}
+
+.primary-btn-filled--hover {
+    filter: brightness(0.98);
+    scale: 0.99;
+}
+
+.primary-btn-filled--active {
+    filter: brightness(0.95);
+    scale: 0.98;
+}
+
+.primary-btn-filled:disabled {
+    background-color: $border;
+    pointer-events: none;
+    cursor: none;
+}
+
+.primary-btn-outline {
+    border: 1px solid $primary;
+    color: $primary;
+    background-color: $surface;
+
+    @extend .button-text;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+}
+
+body {
+	background-color: $background;
+}

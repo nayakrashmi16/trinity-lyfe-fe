@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<app-error-toast [error]="searchError"></app-error-toast>
+<div class="search-results-container" *ngIf="searchResultsArray.length > 0">
+    <h1 class="search-result-text">Search Results for: {{searchTerm}}</h1>
+    <h2 class="search-result-count">{{searchResultsArray.length}} Results</h2>
+    <div class="search-result-item" *ngFor="let searchResultItem of searchResultsArray" [routerLink]="['/profile', searchResultItem.username]" routerLinkActive="active">
+        <div class="profile-img-container">
+            <img src="../../assets/images/avatar.png" class="profile-img">
+        </div>
+        <div class="search-result-item-content">
+            <p class="search-result-username">{{searchResultItem.username}}</p>
+            <p class="search-result-name">{{searchResultItem.name}}</p>
+        </div>
+    </div>
+</div>
+<div class="no-results-container" *ngIf="searchResultsArray.length === 0">
+    <h2 class="search-result-count">Sorry that did not return any results!</h2>
+    <img src="../../assets/images/no-images.png" class="no-results-container-img">
+</div>

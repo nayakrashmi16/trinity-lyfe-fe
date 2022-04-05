@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="profile-detail-container">
+    <div class="profile-img-container">
+        <img src="../../assets/images/avatar.png" class="profile-img"> 
+    </div>
+    <div class="profile-detail-content">
+        <h1 class="profile-username">{{profileUser}}</h1>
+        <h2 class="profile-name">{{profileUserName}}</h2>
+        <h3 class="profile-post-count">{{profilePostCount}} posts</h3>
+    </div>
+    <div class="change-password-container" *ngIf="user === profileUser">
+        <button class="change-password-btn" routerLink="/change-password" routerLinkActive="active">Change Password</button>
+    </div>
+</div>
+<app-post-grid [postDetailArray]="postDetailArray"></app-post-grid>

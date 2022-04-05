@@ -1,0 +1,53 @@
+@import '../../styles.scss';
+
+.banner-container {
+    height: 400px;
+    width: 100%;
+
+    background: url('../../assets/images/landing-page-banner.png');
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-content {
+    width: 60%;
+}
+
+
+.banner-title {
+    @extend .h1-text;
+    color: $on-primary;
+    margin-bottom: 25px;
+}
+
+.banner-headline {
+    @extend .body1-text;
+    color: $on-primary;
+    margin-bottom: 25px;
+}
+
+.form-input {
+    @extend .body3-text;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    border: 1px solid;    
+    
+    background-color: $surface;
+    color: $on-surface;
+    border-color: $border;
+
+    transition: all 0.2s ease-in;
+    
+}
+
+.form-input::placeholder {
+    color: $placeholder;
+}
+
+.form-input:focus {
+    border-color: $primary-light;
+}

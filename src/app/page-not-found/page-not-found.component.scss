@@ -1,0 +1,27 @@
+@import '../../styles.scss';
+
+.page-not-found-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 90vh;
+}
+
+.page-not-found-text { 
+    @extend .h2-text;
+    margin-bottom: 30px;
+}
+
+.page-not-found-link-container {
+    margin-bottom: 30px;
+}
+
+.page-not-found-link-container a {
+    color: $primary;
+}
+
+.page-not-found-img {
+    height: 500px;
+}

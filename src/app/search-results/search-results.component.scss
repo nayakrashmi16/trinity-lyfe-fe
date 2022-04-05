@@ -1,0 +1,66 @@
+@import '../../styles.scss'; 
+
+
+.search-results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-result-text {
+    @extend .h2-text;
+    margin-top: 30px;
+}
+
+.search-result-count {
+    @extend .body1-text;
+    margin: 20px 0 30px 0;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    width: 40%;
+    cursor: pointer;
+}
+
+.search-result-item:not(:last-of-type) {
+    border-bottom: 1px solid $border;
+}
+
+.profile-img-container {
+    height: 50px;
+    width: 50px;
+    background-color: $primary-dark;
+    border-radius: 100%;
+    margin-right: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    height: 40px;
+}
+
+.search-result-username {
+    @extend .h2-text;
+    color: $on-background;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.search-result-name {
+    @extend .body1-text;
+    color: $border;
+}
+
+.no-results-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}

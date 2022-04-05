@@ -1,0 +1,34 @@
+<div class="navbar-container">
+    <div class="navbar-left-container">
+        <div class="logo-container" routerLink="/landing-page" routerLinkActive="active">
+            <img src="../../assets/icons/logo.png" class="logo-img">
+            <p class="logo-text">Trinity Lyfe</p>
+        </div>
+    </div>
+    <div class="navbar-right-container" *ngIf="isLoggedIn === 'true'">
+        <button class="upload-photo-btn" routerLink="/upload-photo" routerLinkActive="active">
+            <img src="../../assets/icons/file-explorer-icon.png" class="upload-photo-btn-icon">
+            Upload
+        </button>
+        <div class="profile-link-container">
+            <div class="profile-img-container">
+                <img src="../../assets/images/avatar.png" class="profile-img"> 
+            </div>
+            <p class="profile-link-text" [routerLink]="['/profile', user]" routerLinkActive="active">{{user}}</p>
+        </div>
+        <div class="link-container">
+            <button class="logout-btn" (click)="logout()">
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <div class="navbar-right-container" *ngIf="isLoggedIn === 'false'">
+        <div class="link-container">
+            <p class="link-text" routerLink="/signup" routerLinkActive="active">Signup</p>
+        </div>
+        <div class="link-container">
+            <p class="link-text" routerLink="/login" routerLinkActive="active">Login</p>
+        </div>
+    </div>
+</div>

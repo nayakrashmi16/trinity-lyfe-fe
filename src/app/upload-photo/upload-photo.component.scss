@@ -1,0 +1,139 @@
+@import '../../styles.scss';
+
+.photo-upload-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    position: relative;
+
+}
+
+.photo-upload-header {
+    @extend .h2-text;
+    color: $on-background;
+    margin-bottom: 25px;
+}
+
+.photo-upload-subheader {
+    @extend .h3-text;
+    color: $placeholder;
+    margin-bottom: 50px;
+}
+
+.photo-browser-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    padding: 100px 200px;
+
+    background-color: $surface;
+    box-shadow: 0 16px 40px 0 $card-shadow;
+}
+
+
+.photo-caption-edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+
+}
+
+.photo-browser-illustration-container {
+    margin-bottom: 30px;
+}
+
+.photo-browser-illustration {
+    height: 100px;
+}
+
+.photo-browser-header {
+    @extend .h3-text;
+    color: $on-background;
+    margin-bottom: 25px;
+}
+
+.photo-browser-description {
+    @extend .body3-text;
+    color: $placeholder;
+    margin-bottom: 30px;
+}
+
+.photo-browser-btn {
+    @extend .primary-btn-filled;
+    padding: 12px 28px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.photo-browser-btn input {
+    display: none;
+}
+
+.photo-browser-btn:hover {
+    @extend .primary-btn-filled--hover;
+}
+
+.photo-browser-btn:active {
+    @extend .primary-btn-filled--active;
+}
+
+.photo-browser-btn-icon {
+    height: 15px;
+    margin-right: 8px;
+}
+
+.form-input {
+    @extend .body3-text;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid;    
+    
+    background-color: $surface;
+    color: $on-surface;
+    border-color: $border;
+
+    transition: all 0.2s ease-in;
+    
+}
+
+.form-input::placeholder {
+    color: $placeholder;
+}
+
+.form-input:focus {
+    border-color: $primary-light;
+}
+
+.photo-upload-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-caption-container {
+    width: 60%;
+    margin-left: 50px;
+}
+
+.photo-preview-img {
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px 0 $card-shadow;
+}
+
+.upload-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}

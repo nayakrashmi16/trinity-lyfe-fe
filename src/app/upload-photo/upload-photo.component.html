@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="photo-upload-container">
+    <app-error-toast [error]="uploadError"></app-error-toast>
+    <h1 class="photo-upload-header">Upload Photo</h1>
+    <h3 class="photo-upload-subheader">Share a new update to the Trinity Community</h3>
+    <form [formGroup]="postUploadForm" class="photo-upload-form">
+        <div class="photo-browser-container" *ngIf="!selectedFile">
+            <div class="photo-browser-illustration-container">
+                <img src="../../assets/images/image-browse-illustration.png" class="photo-browser-illustration">
+            </div>
+            <h1 class="photo-browser-header">Choose an photo from your local storage</h1>
+            <h3 class="photo-browser-description"> JPEG, PNG and GIF File formats allowed</h3>
+            <button class="photo-browser-btn" (click)="photoFile.click()">
+                <input type="file" accept="image/*" #photoFile formControlName="photoFile" (change)="onFileChange($event)">
+                <img src="../../assets/icons/file-explorer-icon.png" class="photo-browser-btn-icon">
+                Browse
+            </button>
+        </div>
+        <div class="photo-caption-edit-container" *ngIf="selectedFile">
+            <div class="photo-preview-container">
+                <img [src]="selectedFile" class="photo-preview-img"> 
+            </div>
+            <div class="photo-caption-container">
+                <p class="caption-label">Write a Caption</p>
+                <textarea formControlName="caption" class="form-input" rows="10"></textarea>
+                <div class="upload-btn-container">
+                    <button class="photo-browser-btn" [disabled]="!postUploadForm.valid" (click)="onSubmit()">Upload</button>
+                </div>
+            </div>
+        </div>
+        <!-- <img [src]="selectedFile"> -->
+    </form>
+</div>
